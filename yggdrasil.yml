@@ -1,6 +1,6 @@
 # What Jenkins checks for this repository, read by the pipeline of the yggdrasil installation that deploys it
 # (yggdrasil's docs/catalog.md, "Repository pipeline file", has every field). It is data, never code: images
-# (pinned by version and digest, which Renovate keeps up to date: the owner merges those changes), commands, globs and
+# (pinned by version and digest, which Renovate keeps up to date), commands, globs and
 # the names of Jenkins credentials. The commands are the scripts under ci/, which run from the repository's root, so
 # you can run them on your machine too. Check it where the catalog is, in the yggdrasil checkout:
 #   python3 scripts/pipeline_config.py describe reveal.js <this repository's checkout>
