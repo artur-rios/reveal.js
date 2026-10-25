@@ -57,6 +57,16 @@ fetch_node22() {
   printf '%s/bin' "$home"
 }
 
+# Fails unless the node on the PATH is the given major.
+expect_node_major() {
+  local major
+  major=$(node -p 'process.versions.node.split(".")[0]')
+  if [ "$major" != "$1" ]; then
+    echo "ci/build.sh: expected Node $1 on the PATH, found $major" >&2
+    return 1
+  fi
+}
+
 # The steps of one matrix leg, with the node and npm on the PATH.
 build_and_test() {
   echo "ci/build.sh: Node $(node --version), npm $(npm --version)"
@@ -70,9 +80,12 @@ for leg in 24 22; do
   echo "ci/build.sh: ==== Node $leg ===="
   if [ "$leg" = 22 ]; then
     node22=$(fetch_node22) || { status=1; continue; }
-    ( PATH="$node22:$PATH"; build_and_test ) || status=1
+    # fetch_node22 runs in $(...) in a `||` list, where set -e does not apply: whatever it left must really be Node 22
+    # before the leg counts, or the leg would silently run on the image's Node 24.
+    ( PATH="$node22:$PATH"; expect_node_major 22 && build_and_test ) || status=1
+    rm -rf "$(dirname "$node22")"
   else
-    build_and_test || status=1
+    expect_node_major 24 && build_and_test || status=1
   fi
 done
 exit "$status"
