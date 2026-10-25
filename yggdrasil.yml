@@ -1,0 +1,19 @@
+# What Jenkins checks for this repository, read by the pipeline of the yggdrasil installation that deploys it
+# (yggdrasil's docs/catalog.md, "Repository pipeline file", has every field). It is data, never code: images
+# (pinned by version and digest, which Renovate keeps up to date: the owner merges those changes), commands, globs and
+# the names of Jenkins credentials. The commands are the scripts under ci/, which run from the repository's root, so
+# you can run them on your machine too. Check it where the catalog is, in the yggdrasil checkout:
+#   python3 scripts/pipeline_config.py describe reveal.js <this repository's checkout>
+#
+# Each check is a job of a GitHub workflow this fork had (spellcheck.yml and test.yml; the files were deleted).
+
+checks:
+  codespell:                             # spellcheck.yml / codespell: "Check for spelling errors"
+    image: python:3.13.17-bookworm@sha256:a3799099b64fd333f262768c7a64733f6e4edb7bc569813710a100214bdcf278
+    run: ci/codespell.sh
+
+  build:                                 # test.yml / build: install, build and test on Node 22 and 24
+    # The image is the Node 24 leg; ci/build.sh fetches Node 22 and runs both. Neither major moves on its own
+    # (renovate.json).
+    image: node:24.22.1-bookworm@sha256:6449e19d8184d84062525b6a7524def03146c2cb04a7f08b076680d0e8e4240a
+    run: ci/build.sh
