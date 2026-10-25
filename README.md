@@ -1,3 +1,5 @@
+> This fork of [reveal.js](https://github.com/hakimel/reveal.js) lives at <https://git.techcraftsmen.net/artur-rios/reveal.js>; the GitHub repository is a read-only mirror of it.
+
 <p align="center">
   <a href="https://revealjs.com">
   <img src="https://hakim-static.s3.amazonaws.com/reveal-js/logo/v1/reveal-black-text-sticker.png" alt="reveal.js" width="500">
