@@ -1,6 +1,7 @@
 {
   "extends": ["local>artur-rios/yggdrasil//renovate/default"],
   "baseBranchPatterns": ["master"],
+  "enabledManagers": ["custom.regex"],
   "packageRules": [
     {
       "description": "The build check runs on Node 22 and Node 24, as the workflow's matrix did: yggdrasil.yml's image is the 24 line and ci/build.sh fetches the 22 line. Neither moves to another major on its own; minor, patch and digest updates still come through.",
