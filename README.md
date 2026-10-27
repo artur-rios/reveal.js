@@ -1,3 +1,9 @@
+> [!NOTE]
+> This is the real, open-source code of reveal.js. Its home is Forgejo, at
+> https://git.techcraftsmen.net/artur-rios/reveal.js; the copy on GitHub is a read-only mirror, for viewing only, and
+> its issues and pull requests are not followed. If you want to contribute, email me at
+> arturdev@duck.com.
+
 > This fork of [reveal.js](https://github.com/hakimel/reveal.js) lives at <https://git.techcraftsmen.net/artur-rios/reveal.js>; the GitHub repository is a read-only mirror of it.
 
 <p align="center">
