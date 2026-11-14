@@ -102,20 +102,20 @@
 		"presentation"
 	],
 	"devDependencies": {
-		"esbuild": "^0.28.1",
+		"esbuild": "^0.28.2",
 		"fitty": "^2.4.2",
-		"glob": "^13.0.6",
-		"highlight.js": "^11.11.1",
-		"jszip": "^3.10.1",
-		"marked": "^17.0.5",
-		"marked-smartypants": "^1.1.11",
+		"glob": "^14.0.6",
+		"highlight.js": "^11.12.0",
+		"jszip": "^3.10.2",
+		"marked": "^18.2.0",
+		"marked-smartypants": "^1.1.12",
 		"node-qunit-puppeteer": "^2.2.1",
-		"puppeteer": "^25.8.0",
-		"qunit": "^2.25.0",
-		"sass": "^1.98.0",
-		"typescript": "^6.0.2",
-		"vite": "^8.0.16",
-		"vite-plugin-dts": "^4.5.4"
+		"puppeteer": "^25.17.0",
+		"qunit": "^2.26.0",
+		"sass": "^1.108.2",
+		"typescript": "^6.0.3",
+		"vite": "^8.3.8",
+		"vite-plugin-dts": "^5.1.2"
 	},
 	"overrides": {
 		"@microsoft/api-extractor": {

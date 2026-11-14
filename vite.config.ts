@@ -44,7 +44,7 @@ export default defineConfig({
 	plugins: [
 		dts({
 			insertTypesEntry: true,
-			rollupTypes: false,
+			bundleTypes: false,
 			exclude: ['**/index.ts'],
 			copyDtsFiles: true,
 			beforeWriteFile(filePath, content) {
